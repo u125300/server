@@ -5,7 +5,7 @@ notifications:
   email: false
 
 before_install:
-- sudo apt-get install ansible virtualbox vagrant linux-headers-amd64
+- sudo apt-get install ansible virtualbox vagrant linux-headers-$(uname -r)
 - mkdir vm-debian-netvirt
 - cd vm-debian-netvirt
 - wget https://raw.githubusercontent.com/netvirt/netvirt/master/build_farm/netvirt.yml
