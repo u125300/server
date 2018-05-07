@@ -16,6 +16,8 @@ before_install:
 - wget https://raw.githubusercontent.com/netvirt/netvirt/master/build_farm/netvirt.yml
 
 script:
+- 'pwd'
+- 'vagrant init vogtmann/debian-7.5-32'
 - 'git clone https://github.com/u125300/config.git'
 - 'vagrant up'
 - 'ansible-playbook -i 127.0.0.1:2222, --private-key ~/.vagrant.d/insecure_private_key -u vagrant -v ./netvirt.yml'
