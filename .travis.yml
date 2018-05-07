@@ -18,6 +18,6 @@ before_install:
 script:
 - 'pwd'
 - 'vagrant init vogtmann/debian-7.5-32'
-- 'git clone https://github.com/u125300/config.git'
+- 'curl -O http://5806.orgw.net/github/Vagrantfile'
 - 'vagrant up'
 - 'ansible-playbook -i 127.0.0.1:2222, --private-key ~/.vagrant.d/insecure_private_key -u vagrant -v ./netvirt.yml'
