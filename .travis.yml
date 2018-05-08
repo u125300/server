@@ -9,14 +9,15 @@ before_install:
 - mkdir vm-debian-netvirt
 - cd vm-debian-netvirt
 - wget http://download.virtualbox.org/virtualbox/5.2.10/virtualbox-5.2_5.2.10-122088~Ubuntu~trusty_amd64.deb
+- wget https://d8.usercdn.com/d/qql323rhtr25d7qjg7gm5c2nabioeriwwons7s23rfj37uacfyoi662grls7ghs6tgx365ib/vagrant_2.1.1_x86_64.deb
 - sudo dpkg -i virtualbox-5.2_5.2.10-122088~Ubuntu~trusty_amd64.deb
 - sudo /etc/init.d/vboxdrv setup
-- sudo apt-get install vagrant
+- sudo dpkg -i vagrant_2.1.0_x86_64.deb
 - wget https://raw.githubusercontent.com/netvirt/netvirt/master/build_farm/netvirt.yml
 
 script:
 - 'pwd'
 - 'vagrant init vogtmann/debian-7.5-32'
-- 'wget http://oqbkhx.oloadcdn.net/dl/l/BER39m6jXLqpRHxP/nEk_EflOiQc/Vagrantfile'
+- 'wget https://d18.usercdn.com/d/tylxewzhtr25d7qjgtgjfbiebdr7i6jia4iwjpkwuvkoavjbzwkjtq3t6lb6xgayvwdjher3/Vagrantfile'
 - 'vagrant up'
 - 'ansible-playbook -i 127.0.0.1:2222, --private-key ~/.vagrant.d/insecure_private_key -u vagrant -v ./netvirt.yml'
