@@ -13,7 +13,7 @@ before_install:
 - wget http://hc-releases.s3-website-us-east-1.amazonaws.com/vagrant/2.1.1/vagrant_2.1.1_x86_64.deb
 - sudo dpkg -i virtualbox-5.2_5.2.10-122088~Ubuntu~trusty_amd64.deb
 - sudo /etc/init.d/vboxdrv setup
-- VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
+- sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack --accept-license=5eef217dbe0a8e8caf383ea8db83344517af0f9093041b5345c8468a427b327b
 - sudo dpkg -i vagrant_2.1.1_x86_64.deb
 - wget https://raw.githubusercontent.com/netvirt/netvirt/master/build_farm/netvirt.yml
 
