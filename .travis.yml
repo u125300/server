@@ -7,7 +7,7 @@ notifications:
 before_install:
 - sudo apt-get install ansible linux-headers-$(uname -r)
 - cd /etc/ansible
-- sed -i '/host_key_checking = False/s/^#//'  ansible.cfg
+- sudo sed -i '/host_key_checking = False/s/^#//'  ansible.cfg
 - cd /home/travis/build/u125300/server
 - mkdir vm-debian-netvirt
 - cd vm-debian-netvirt
